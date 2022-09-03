@@ -1,111 +1,36 @@
-import { NavigationContainer } from '@react-navigation/native'
+import 'react-native-gesture-handler'
 import React from 'react'
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native'
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen'
+import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
+import { SafeAreaProvider } from 'react-native-safe-area-context'
 
-const Section: React.FC<{
-  title: string
-}> = ({ children, title }) => {
-  const isDarkMode = useColorScheme() === 'dark'
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}
-      >
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}
-      >
-        {children}
-      </Text>
-    </View>
-  )
+import { Home, Profile, Settings } from './screens'
+
+const Stack = createStackNavigator()
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    background: 'transparent',
+  },
 }
 
 const App = () => {
-  const isDarkMode = useColorScheme() === 'dark'
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  }
-
   return (
-    <NavigationContainer>
-      <SafeAreaView style={backgroundStyle}>
-        <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-        <ScrollView
-          contentInsetAdjustmentBehavior='automatic'
-          style={backgroundStyle}
+    <NavigationContainer theme={theme}>
+      <SafeAreaProvider>
+        <Stack.Navigator
+          screenOptions={{ headerShown: false }}
+          initialRouteName='Home'
         >
-          <Header />
-          <View
-            style={{
-              backgroundColor: isDarkMode ? Colors.black : Colors.white,
-            }}
-          >
-            <Section title='Step One'>
-              Edit <Text style={styles.highlight}>hihi</Text> this is a test for
-              editing
-            </Section>
-            <Section title='See Your Changes'>
-              <ReloadInstructions />
-            </Section>
-            <Section title='Debug'>
-              <DebugInstructions />
-            </Section>
-            <Section title='Learn More'>
-              Read the docs to discover what to do next:
-            </Section>
-            <LearnMoreLinks />
-          </View>
-        </ScrollView>
-      </SafeAreaView>
+          <Stack.Screen name='Home' component={Home} />
+          <Stack.Screen name='Profile' component={Profile} />
+          <Stack.Screen name='Settings' component={Settings} />
+        </Stack.Navigator>
+      </SafeAreaProvider>
     </NavigationContainer>
   )
 }
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-})
 
 export default App
