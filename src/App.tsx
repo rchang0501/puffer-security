@@ -5,6 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
 import { Home, Profile, Settings } from './screens'
+import { colors } from './theme'
 
 const Stack = createStackNavigator()
 
@@ -12,7 +13,8 @@ const theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
-    background: 'transparent',
+    text: colors.text.default,
+    background: colors.background[200],
   },
 }
 
