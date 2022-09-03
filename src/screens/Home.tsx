@@ -11,8 +11,8 @@ const Home = () => {
     >
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Image source={mainButton} />
-        <Text style={{ color: colors.text.default }}>Press and Hold</Text>
-        <Text style={{ color: colors.text.default }}>in Emergency</Text>
+        <Text style={{ color: colors.text.default, fontWeight: "bold", fontSize: 18 }}>Press and Hold</Text>
+        <Text style={{ color: colors.text.default, fontWeight: "bold", fontSize: 18 }}>in Emergency</Text>
       </View>
     </SafeAreaView>
   )
