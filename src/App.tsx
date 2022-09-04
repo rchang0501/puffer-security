@@ -4,6 +4,7 @@ import { NavigationContainer, DefaultTheme } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
 import { SafeAreaProvider } from 'react-native-safe-area-context'
 
+import Header from './components/common/Header'
 import { Home, Profile, Settings } from './screens'
 import { colors } from './theme'
 
@@ -22,6 +23,7 @@ const App = () => {
   return (
     <NavigationContainer theme={theme}>
       <SafeAreaProvider>
+        <Header/>
         <Stack.Navigator
           screenOptions={{ headerShown: false }}
           initialRouteName='Home'

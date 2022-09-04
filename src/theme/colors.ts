@@ -5,6 +5,10 @@ const colors = {
   },
   text: {
     default: '#E3E3E3'
+  }, 
+  circle: {
+    active: '#F8C03B',
+    inactive: '#6E6E6E'
   }
 }
 
