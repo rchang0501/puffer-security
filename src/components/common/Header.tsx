@@ -2,13 +2,7 @@ import { Dimensions, SafeAreaView, View } from 'react-native'
 import React from 'react'
 
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
-import {
-  faShieldHalved,
-  faGear,
-  faUser,
-  faCircle,
-  faC,
-} from '@fortawesome/free-solid-svg-icons'
+import { faGear, faUser, faCircle } from '@fortawesome/free-solid-svg-icons'
 
 import { colors } from '../../theme'
 
