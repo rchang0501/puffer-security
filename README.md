@@ -9,3 +9,9 @@ For the complete proposal document please [click here](https://drive.google.com/
 Figma mockup: [click here!](https://www.figma.com/proto/rBQntVVH5wc0T0ZY3F5LL1/Puffer-Security?node-id=121%3A311&scaling=scale-down&page-id=121%3A216&starting-point-node-id=121%3A311)
 
 ![Final Iteration and Feature Set](https://user-images.githubusercontent.com/46568041/192081690-1e3638c0-51c4-42a8-9673-e4febe394880.png)
+
+## Tech Specs 
+Frontend: TypeScript (React Native) <br>
+Backend: TypeScript (Express.JS on Node.JS) <br>
+Database: PostgreSQL <br>
+Technologies: Socket.IO, Amplitude <br>
