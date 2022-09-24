@@ -1,0 +1,6 @@
+module Pods_PufferSecurity {
+  umbrella header "Pods-PufferSecurity-umbrella.h"
+
+  export *
+  module * { export * }
+}
